@@ -9,4 +9,4 @@ RUN curl -sS https://getcomposer.org/installer | php \
 
 RUN composer global require friendsofphp/php-cs-fixer
 
-ENV PATH PATH="$PATH:$HOME/.composer/vendor/bin"
+ENV PATH $PATH:/root/.composer/vendor/bin
