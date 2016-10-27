@@ -1,5 +1,8 @@
 FROM php:5
 
+RUN apt-get update && apt-get install -y \
+  git
+
 RUN curl -sS https://getcomposer.org/installer | php \
   && mv -v composer.phar /usr/local/bin/composer
 
