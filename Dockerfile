@@ -2,11 +2,13 @@ FROM php:5
 
 RUN apt-get update && apt-get install -y \
   git \
-  zip
+  wget
 
-RUN curl -sS https://getcomposer.org/installer | php \
-  && mv -v composer.phar /usr/local/bin/composer
+# INSTALL COMPOSER
+RUN wget https://getcomposer.org/composer.phar -O /usr/local/bin/composer && \
+  chmod a+x /usr/local/bin/composer
 
-RUN composer global require friendsofphp/php-cs-fixer
+#INSTALL PHP-CS-FIXER
+RUN wget http://get.sensiolabs.org/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer && \
+  chmod a+x /usr/local/bin/php-cs-fixer
 
-ENV PATH $PATH:/root/.composer/vendor/bin
