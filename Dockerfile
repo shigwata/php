@@ -1,5 +1,7 @@
 FROM php:5
 
+COPY php.ini /usr/local/etc/php/
+
 RUN apt-get update && apt-get install -y \
   git \
   libbz2-dev \
