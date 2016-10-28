@@ -2,7 +2,10 @@ FROM php:5
 
 RUN apt-get update && apt-get install -y \
   git \
-  wget
+  libbz2-dev \
+  wget \
+  && docker-php-ext-install \
+  bz2 
 
 # INSTALL COMPOSER
 RUN wget https://getcomposer.org/composer.phar -O /usr/local/bin/composer && \
