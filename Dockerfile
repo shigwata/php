@@ -38,3 +38,7 @@ RUN wget -cq https://phar.phpunit.de/phpdcd.phar -O /usr/local/bin/phpdcd && \
 #INSTALL PHPLOC
 RUN wget -cq https://phar.phpunit.de/phploc.phar -O /usr/local/bin/phploc && \
   chmod a+x /usr/local/bin/phploc
+
+#INSTALL PHP_Depend
+RUN wget -cq http://static.pdepend.org/php/latest/pdepend.phar -O /usr/local/bin/pdepend && \
+  chmod a+x /usr/local/bin/pdepend
