@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
   git \
   libbz2-dev \
   wget \
+  zip \
   && docker-php-ext-install \
   bz2 
 
